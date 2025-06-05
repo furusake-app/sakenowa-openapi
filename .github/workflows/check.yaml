@@ -1,0 +1,32 @@
+name: check
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22
+      - name: setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 10
+      - name: install dependencies
+        run: pnpm install
+      - name: check formatting
+        run: pnpm check:format
+      - name: build
+        run: pnpm build:tsp
+      - name: lint openapi
+        run: pnpm check:lint
