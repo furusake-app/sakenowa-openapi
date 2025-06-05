@@ -20,6 +20,7 @@
     "@redocly/cli": "^1.34.3",
     "@typespec/compiler": "^1.0.0",
     "@typespec/http": "^1.0.1",
+    "@typespec/openapi": "^1.0.0",
     "@typespec/openapi3": "^1.0.0"
   },
   "private": true
