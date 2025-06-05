@@ -1,0 +1,6 @@
+extends:
+  - recommended
+
+apis:
+  sakenowa-data:
+    root: ./dist/openapi/openapi.yaml
