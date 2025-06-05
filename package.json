@@ -4,17 +4,17 @@
   "type": "module",
   "scripts": {
     "dev": "pnpm /^watch:.*/",
-    "watch:tsp": "tsp compile ./ --watch",
+    "watch:tsp": "tsp compile ./src/ --watch",
     "watch:redocly": "redocly preview-docs",
     "build": "pnpm build:tsp && pnpm build:redocly",
-    "build:tsp": "tsp compile ./",
+    "build:tsp": "tsp compile ./src/",
     "build:redocly": "redocly build-docs -o './dist/docs/index.html'",
     "prebuild": "pnpx rimraf ./dist",
     "check": "pnpm /^check:.*/",
-    "check:format": "tsp format -c ./",
+    "check:format": "tsp format -c ./src/",
     "check:lint": "redocly lint",
     "fix": "pnpm /^fix:.*/",
-    "fix:format": "tsp format ./"
+    "fix:format": "tsp format ./src/"
   },
   "devDependencies": {
     "@redocly/cli": "^1.34.3",
