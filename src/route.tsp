@@ -1,12 +1,16 @@
-import "./model.tsp";
+import "./models/area.tsp";
+import "./models/copyright.tsp";
 
 using TypeSpec.Http;
 
 namespace Sakenowa;
 
-@route("/sample")
-interface SampleOperations {
-  @summary("Get sample data")
+@route("/areas")
+interface AreasOperations {
+  @summary("地域一覧")
   @get
-  sample(): SampleModel;
+  getAreas(): {
+    ...CopyrightModel;
+    areas: AreaModel[];
+  };
 }
