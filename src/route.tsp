@@ -1,5 +1,6 @@
 import "./models/area.tsp";
 import "./models/copyright.tsp";
+import "./models/brand.tsp";
 
 using TypeSpec.Http;
 
@@ -12,5 +13,15 @@ interface AreasOperations {
   getAreas(): {
     ...CopyrightModel;
     areas: AreaModel[];
+  };
+}
+
+@route("/brands")
+interface BrandsOperations {
+  @summary("銘柄一覧")
+  @get
+  getBrands(): {
+    ...CopyrightModel;
+    brands: BrandModel[];
   };
 }
