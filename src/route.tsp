@@ -5,6 +5,7 @@ import "./models/brewery.tsp";
 import "./models/ranking.tsp";
 import "./models/flavor-chart.tsp";
 import "./models/flavor-tag.tsp";
+import "./models/brand-flavor-tag.tsp";
 
 using TypeSpec.Http;
 
@@ -76,5 +77,15 @@ interface FlavorTagsOperations {
   getFlavorTags(): {
     ...CopyrightModel;
     tags: FlavorTagModel[];
+  };
+}
+
+@route("/brand-flavor-tags")
+interface BrandFlavorTagsOperations {
+  @summary("銘柄ごとのフレーバータグ一覧")
+  @get
+  getBrandFlavorTags(): {
+    ...CopyrightModel;
+    flavorTags: BrandFlavorTagModel[];
   };
 }
