@@ -3,6 +3,7 @@ import "./models/copyright.tsp";
 import "./models/brand.tsp";
 import "./models/brewery.tsp";
 import "./models/ranking.tsp";
+import "./models/flavor-chart.tsp";
 
 using TypeSpec.Http;
 
@@ -54,5 +55,15 @@ interface RankingsOperations {
 
     @doc("地域ランキング")
     areaRankings: AreaRankingModel[];
+  };
+}
+
+@route("/flavor-charts")
+interface FlavorChartsOperations {
+  @summary("銘柄ごとのフレーバーチャート")
+  @get
+  getFlavorCharts(): {
+    ...CopyrightModel;
+    flavorChart: FlavorChartModel[];
   };
 }
