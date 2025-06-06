@@ -2,6 +2,7 @@ import "./models/area.tsp";
 import "./models/copyright.tsp";
 import "./models/brand.tsp";
 import "./models/brewery.tsp";
+import "./models/ranking.tsp";
 
 using TypeSpec.Http;
 
@@ -34,5 +35,24 @@ interface BreweriesOperations {
   getBreweries(): {
     ...CopyrightModel;
     breweries: BreweryModel[];
+  };
+}
+
+@route("/rankings")
+interface RankingsOperations {
+  @summary("さけのわでの総合および地域ランキング")
+  @get
+  getRankings(): {
+    ...CopyrightModel;
+
+    @doc("ランキングの対象年月 (YYYYMM形式)")
+    @example("202007")
+    yearMonth: string;
+
+    @doc("総合ランキング")
+    overall: RankingItemModel[];
+
+    @doc("地域ランキング")
+    areaRankings: AreaRankingModel[];
   };
 }
