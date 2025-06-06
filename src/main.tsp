@@ -13,4 +13,5 @@ using TypeSpec.OpenAPI;
     url: "https://muro.sakenowa.com/sakenowa-data#%E5%88%A9%E7%94%A8%E8%A6%8F%E7%B4%84",
   },
 })
+@useAuth(NoAuth)
 namespace Sakenowa;
