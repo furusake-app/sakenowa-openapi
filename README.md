@@ -1,7 +1,7 @@
 
 # [さけのわデータ](https://muro.sakenowa.com/sakenowa-data) OpenAPI (非公式)
 
-[📖 View Documents](https://teamwork-g2-t1.github.io/sakenowa-openapi/)
+[📖 View Documents](https://furusake-app.github.io/sakenowa-openapi/)
 
 
 
